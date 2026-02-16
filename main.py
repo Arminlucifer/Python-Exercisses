@@ -670,3 +670,31 @@ import random
 # print(cards)
 # print(option)
 # print(number)
+
+
+# -------------------- FUNCTION = A BLOCK OF REUSABLE CODE-------------
+#         place () after the function name to invokke it
+
+# def happy_bday(name, age):
+#    print(f"HAPPY BIRTHDAY {name}")
+#    print(f"You are now {age} years old!")
+#
+#
+# happy_bday("Armin", 22)
+# happy_bday("ali", 18)
+# happy_bday("hossein", 40)
+
+# ----------RETURN = STATEMENT USED TO END FUNCTION-----------------
+#     and send a result back to caller
+
+# def create_name(first, last):
+#    first = first.capitalize()
+#    last = last.capitalize()
+#    return first + " " + last
+#
+#
+# full_name = create_name("armin", "jahangiri")
+#
+# print(full_name)
+
+# --------------------------------
