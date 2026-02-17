@@ -1,0 +1,46 @@
+Tamrin haye python:
+
+Session 1:
+# Exercise 1 Rectangle Area Calc
+# Exercise 2 Shopping cart program
+# Excersice 3 AREA OF A CIRCLE
+# Excersice 4 وتر
+IF STATEMENT:
+#Excersise 5 Python calc
+#Python weight converter
+# temperature conversion program
+
+#Validate user input exercise
+# 1. username is no more than 12 characters
+# 2. username must not contain spaces
+# 3. username must contain digits
+
+
+# Excersice : Create a program that returns last 4 digits of a credit number
+
+
+
+# python compound interest calculator   =   A = P91+r/n)^t
+A = Final Amount
+P = initial principal balance
+r = interest rate 
+t= number of time periods elapsed
+
+
+
+#EXERCISE : Count-down timer python program :
+
+
+#create a rectangle using nested loops based on input 
+
+
+
+#SHOPPING CART PROGRAM USING COLLECTIONS
+
+
+# EXERCISE
+# CREATE A TWO DIMENSIONAL KEY PAD (PHONE)
+
+# concession stand program
+
+# dictionary {key:value}
