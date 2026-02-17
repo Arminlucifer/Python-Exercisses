@@ -650,7 +650,7 @@
 # ---------------------------------------------------------------------------------------------
 # random num
 
-import random
+# import random
 
 # help(random)
 
@@ -697,4 +697,112 @@ import random
 #
 # print(full_name)
 
-# --------------------------------
+# -------------------------------- Default arguments = A default value for certain parameters
+# --------------------------------- default is used when that argument is omitted
+#                                  make your functions more flexible, reduces # of arguments
+#                                  1. positional, 2.DEFAULT, 3.keyword, 4.arbitrary
+
+# 2.DEFAULT
+# def net_price(list_price, discount=0, tax=0.05):
+#    return list_price * (1-discount) * (1 + tax)
+#
+#
+# print(net_price(500))
+# print(net_price(500))
+# print(net_price(500, .1, 0))
+# -----------------------------------------------------------------------------
+# 3.KEYWORD = an argument preceded by an identifier
+#           helps with readability
+#           order of arguments does't matter
+#           1. positional, 2.DEFAULT, 3.keyword, 4.arbitrary
+
+# def greet(greeting, title, first, last):
+#    print(f"{greeting} {title}{first} {last}")
+#
+#
+# greet("Hello", first="Armin", last="Jahangiri", title="Mr.")
+# another example of keyword arguments
+# print("1", "2", "3", "4", "5", sep=" XYZ ")
+# -----------------------------------------------------------------------------
+# 4 ARBITRARY:
+
+# *args     = allows you to pass multiple non-key arguments
+# **kwargs  = allows you to pass multiple keyword-arguments
+#           *   unpacking operator
+
+# def display_name(*args):
+#    for arg in args:
+#        print(arg, end=" ")
+#
+#
+# display_name("MR", "Armin", "Jahangiri", "III")
+# print()
+
+# KWARGS:
+
+
+# def get_address(**kwargs):
+#    for key, value in kwargs.items():
+#        print(f"{key}:{value}")
+#
+#
+# get_address(street="Keyhan",
+#            num="6",
+#            city="Tehran",
+#            zip="123")
+
+# ------------------------------------------------------------------------------
+
+# ITERABLES = an object / collection that can return its elements one at a time,
+#               allowing it to be iterated over in a loop
+
+# -------------------------------------------------------------------------------
+
+# MEMBERSHIP OPERATORS = used to test whether a value or variable is found in a sequence
+#           (string, list, tuple, set, dictionary)
+#           1. in
+#           2. not in
+
+# grades = {"Sandy": "A",
+#          "Spongebob": "C",
+#          "Patrick": "F",
+#          "squidward": "B"}
+#
+# student = input("Enter the name of a student: ")
+#
+# if student in grades:
+#    print(f"{student}'s grade is {grades[student]}")  # = {gardes.get(student)}
+# else:
+#    print(f"{student} was not found")
+
+# --------------------------------------------------------------------------------
+# LIST COMPREHENSION = A concise way to create lists in Python
+#           Compact and easier to read than tradiotional loops
+#      FORMULA:[expression for value in iterable if condition]
+
+#triples = [x * 3 for x in range(0, 11)]
+#print(triples)
+#
+#
+#fruits = ["apple", "banana", "cucumber", "coconut"]
+#fruits_first = [char[0] for char in fruits]
+#print(fruits_first)
+
+#numbers = [1, 2, -4, 5, -7, -10]
+# CONDITION:
+#positive_numbers = [num for num in numbers if num > 0]
+#print(positive_numbers)
+
+#grades = {"Armin": 18,
+#          "Ali": 8,
+#          "Mamad": 12,
+#          "Mona": 14,
+#          "Reza": 2}
+#
+#passed_students = [grade for grade in grades if grades[grade] > 10 ]
+#print(passed_students)
+
+# Match-case statement(switch): An alternative to using mani=y "elif" statements
+#           Excute some code if a value matches a 'case'
+#           Benefits: cleaner and syntax is more readable
+
