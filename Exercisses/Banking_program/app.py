@@ -16,16 +16,16 @@ def main():
         print("2.Withdraw Money")
         print("3.Deposit Money")
         print("4.Exit")
-        choice = int(input("Enter your choice (1/2/3/4): "))
+        choice = input("Enter your choice (1/2/3/4): ")
 
         match choice:
-            case 1:
-                check_balance(balance)
-            case 2:
-                withdraw(balance)
-            case 3:
-                deposit(balance)
-            case 4:
+            case "1":
+                check_balance.check_balance(balance)
+            case "2":
+                withdraw.withdraw(balance)
+            case "3":
+                deposit.deposit(balance)
+            case "4":
                 running = False
             case _:
                 print("That is not a valid input")
