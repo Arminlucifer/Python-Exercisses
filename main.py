@@ -780,29 +780,59 @@
 #           Compact and easier to read than tradiotional loops
 #      FORMULA:[expression for value in iterable if condition]
 
-#triples = [x * 3 for x in range(0, 11)]
-#print(triples)
+# triples = [x * 3 for x in range(0, 11)]
+# print(triples)
 #
 #
-#fruits = ["apple", "banana", "cucumber", "coconut"]
-#fruits_first = [char[0] for char in fruits]
-#print(fruits_first)
+# fruits = ["apple", "banana", "cucumber", "coconut"]
+# fruits_first = [char[0] for char in fruits]
+# print(fruits_first)
 
-#numbers = [1, 2, -4, 5, -7, -10]
+# numbers = [1, 2, -4, 5, -7, -10]
 # CONDITION:
-#positive_numbers = [num for num in numbers if num > 0]
-#print(positive_numbers)
+# positive_numbers = [num for num in numbers if num > 0]
+# print(positive_numbers)
 
-#grades = {"Armin": 18,
+# grades = {"Armin": 18,
 #          "Ali": 8,
 #          "Mamad": 12,
 #          "Mona": 14,
 #          "Reza": 2}
 #
-#passed_students = [grade for grade in grades if grades[grade] > 10 ]
-#print(passed_students)
+# passed_students = [grade for grade in grades if grades[grade] > 10 ]
+# print(passed_students)
 
 # Match-case statement(switch): An alternative to using mani=y "elif" statements
 #           Excute some code if a value matches a 'case'
 #           Benefits: cleaner and syntax is more readable
 
+# ==========================================================================
+# module = a file containing code you want to include in your program
+#           use 'import' to include a module (built-in or your own)
+#           useful to break up a large program reusable seprate files
+
+# print(help("modules"))
+# print(help("math"))
+
+# import math = import math as m #behesh nickname midim
+# print(m.pi)
+# from math import pi #behtare az in ziad estfde nashe (name shit)
+# print(pi)
+# #==========================================================================
+
+# variable scope = where a variable is visible and accessible
+# scope resolution = (LEGB) Local -> Enclosed -> Global -> Built-in
+
+# ============================================================================
+# if__name__ == __main__: (This script can be imported OR run standalone)
+#                       Functions and classes in this module can be reused
+#                       without the main block of code executing
+
+# ex. library = Import library for funtionality
+#       When running library directly, display a help page
+
+# Good practice (code is modular,
+#              helps readability,
+#              leaves no global variables,
+#              avoid unintended execution)
+#====================================================================================================================
