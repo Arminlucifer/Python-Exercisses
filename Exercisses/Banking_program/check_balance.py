@@ -1,2 +1,2 @@
 def check_balance(balance):
-    print(f"Your Balance is ${balance}")
+    print(f"Your Balance is ${balance:.2f}")

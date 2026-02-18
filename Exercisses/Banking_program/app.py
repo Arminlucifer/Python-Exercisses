@@ -24,7 +24,7 @@ def main():
             case "2":
                 balance -= withdraw.withdraw(balance)
             case "3":
-                balance + deposit.deposit(balance)
+                balance += deposit.deposit()
             case "4":
                 running = False
             case _:
