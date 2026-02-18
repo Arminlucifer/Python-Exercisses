@@ -22,9 +22,9 @@ def main():
             case "1":
                 check_balance.check_balance(balance)
             case "2":
-                withdraw.withdraw(balance)
+                balance -= withdraw.withdraw(balance)
             case "3":
-                deposit.deposit(balance)
+                balance + deposit.deposit(balance)
             case "4":
                 running = False
             case _:
