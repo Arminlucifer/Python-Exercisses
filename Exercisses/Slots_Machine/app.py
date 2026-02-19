@@ -21,6 +21,7 @@ def main():
 
             case (b, bal) if int(b) > bal:
                 print("Your Bet Cannot Be Greater Than Your Balance")
+                continue
 
             case (b, _) if int(b) == 0:
                 print("The minimum amount of bet is 1$")
