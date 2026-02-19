@@ -38,6 +38,28 @@ def main():
 
         print_row.print_row(row)
 
+        payout = paycheck.paycheck(row, bet)
+        if payout > 0:
+            print(f"YOU WON ${payout}")
+
+        else:
+            print("You've Lost the round")
+
+        if balance == 0:
+            print("Sorry you've lost all of your money")
+            break
+
+        balance += payout
+        print(f"Your Current balance is ${balance}")
+
+        again = input("Do you want to play again? (Y/N): ").upper()
+        if again == "Y":
+            continue
+        else:
+            break
+
+
+print("Hope to see you again!")
 
 if __name__ == "__main__":
     main()
