@@ -18,12 +18,25 @@ def main():
             case (b, _) if not b.isdigit():
                 print("Enter a valid number!")
                 continue
+
             case (b, bal) if int(b) > bal:
                 print("Your Bet Cannot Be Greater Than Your Balance")
+
             case (b, _) if int(b) == 0:
                 print("The minimum amount of bet is 1$")
                 continue
-        spin_row.spin_row()
+
+        bet = int(bet)
+        balance -= bet
+
+        row = spin_row.spin_row()
+
+        import time
+        for _ in range(0, 3):
+            print("Spinning...")
+            time.sleep(1)
+
+        print_row.print_row(row)
 
 
 if __name__ == "__main__":
