@@ -6,7 +6,6 @@ import paycheck
 
 def main():
     balance = 100
-    symbols = ["🍒", "🍉", "🔔", "🌟"]
     print(" * * * * * * * *")
     print(" S  L  O  T  S")
     print(" M A C H I N E")
