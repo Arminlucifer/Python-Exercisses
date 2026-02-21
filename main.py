@@ -872,7 +872,7 @@
 #           Defined outside the constructor
 #           Allow you to share data among all objects created from that class
 
-#class Student:
+# class Student:
 #    class_year = 2025
 #    num_students = 0
 #
@@ -882,12 +882,53 @@
 #        Student.num_students += 1
 #
 #
-#student1 = Student("Armin", 21)
-#student2 = Student("Erfan", 22)
-#student3 = Student("Sponge-Bob", 28)
-#student4 = Student("Patrick", 35)
+# student1 = Student("Armin", 21)
+# student2 = Student("Erfan", 22)
+# student3 = Student("Sponge-Bob", 28)
+# student4 = Student("Patrick", 35)
 #
-#print(student1.name)
-#print(student1.class_year)
-#print(student2.name)
-#print(student2.class_year)
+# print(student1.name)
+# print(student1.class_year)
+# print(student2.name)
+# print(student2.class_year)
+
+# =====================================================================================================================================
+# Inheritance = Allows a class to inherit attributes and methods from another class
+#               Helps with code readability and extensibility
+#               class child(parent)
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def Major(self):
+        print(f"{self.name}'s Major Is Riazi-Physics")
+
+    def Sex(self):
+        print(f"{self.name}'s Sex Is Male")
+
+
+class Armin(Student):
+    def nomre(self):
+        print("18")
+
+
+class Erfan(Student):
+    def nomre(self):
+        print("18")
+
+
+class Ali(Student):
+    def nomre(self):
+        print("18")
+
+
+armin = Armin("Armin")
+erfan = Erfan("Erfan")
+ali = Ali("Ali")
+
+
+erfan.nomre()
+armin.nomre()
+armin.Sex()
+ali.Major()
