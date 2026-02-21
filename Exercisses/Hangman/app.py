@@ -29,11 +29,14 @@ hangman_art = {0: ("   ",
 
 
 def display_art(wrong_guesses):
-    pass
+    print('__________________')
+    for i in hangman_art[wrong_guesses]:
+        print(i)
+    print('__________________')
 
 
 def display_hint(hint):
-    pass
+    print(" ".join(hint))
 
 
 def display_answer(answer):
@@ -41,7 +44,18 @@ def display_answer(answer):
 
 
 def main():
-    pass
+    runnig = True
+    answer = random.choice(words)
+    wrong_guesses = 0
+    guessed_letters = set()
+    hint = ["_"] * len(answer)
+    while runnig:
+        display_art(wrong_guesses)
+        print()
+        display_hint(hint)
+        print()
+        guess = input("Enter a letter: ").lower()
+        
 
 
 if __name__ == "__main__":
