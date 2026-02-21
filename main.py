@@ -835,4 +835,59 @@
 #              helps readability,
 #              leaves no global variables,
 #              avoid unintended execution)
-#====================================================================================================================
+# ====================================================================================================================
+# OBJECT ORIENTED:
+# object = AA "Bundle" of relayed attributes (variables) and methods (functions)
+#                   Ex phone, cup, book
+#                   You need a "class" to create many objects
+
+# class = (blueprint) used to design the structure and layout of an object
+
+# class car:
+#    def __init__(self, model, year, color, maxspeed, price):
+#        self.model = model
+#        self.year = year
+#        self.color = color
+#        self.maxspeed = maxspeed
+#        self.price = price
+#
+#    def drive(self):
+#        print(f"You drive a {self.color} {self.model} ")
+#
+#    def describe(self):
+#        print(f"It's a {self.color} {self.model}, which is for year {self.year} and the maximum speed of it is {self.maxspeed}KM/h and the price is currently ${self.price}")
+#
+#
+# car1 = car("Supra", 2026, "Black", 356, 20000)
+# car2 = car("Z4", 2018, "Red", 280, 17000)
+#
+# car1.describe()
+# car2.describe()
+#
+# car1.drive()
+# car2.drive()
+# ============================================================================================================================
+
+# Class variables = shared among all instances of a class
+#           Defined outside the constructor
+#           Allow you to share data among all objects created from that class
+
+#class Student:
+#    class_year = 2025
+#    num_students = 0
+#
+#    def __init__(self, name, age):
+#        self.name = name
+#        self.age = age
+#        Student.num_students += 1
+#
+#
+#student1 = Student("Armin", 21)
+#student2 = Student("Erfan", 22)
+#student3 = Student("Sponge-Bob", 28)
+#student4 = Student("Patrick", 35)
+#
+#print(student1.name)
+#print(student1.class_year)
+#print(student2.name)
+#print(student2.class_year)
