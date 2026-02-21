@@ -987,7 +987,7 @@
 #           Allows you to extend the functionality of the inherited methods
 
 
-#class Shape:
+# class Shape:
 #    def __init__(self, color, is_filled):
 #        self.color = color
 #        self.is_filled = is_filled
@@ -997,7 +997,7 @@
 #            f"It's {self.color} and {"filled" if self.is_filled else "not filled"}")
 #
 #
-#class Circle(Shape):
+# class Circle(Shape):
 #    def __init__(self, color, is_filled, radius):
 #        super().__init__(color, is_filled)
 #        self.radius = radius
@@ -1007,7 +1007,7 @@
 #        super().describe()
 #
 #
-#class Square(Shape):
+# class Square(Shape):
 #    def __init__(self, color, is_filled, width):
 #        super().__init__(color, is_filled)
 #        self.width = width
@@ -1017,7 +1017,7 @@
 #        super().describe()
 #
 #
-#class Triangle(Shape):
+# class Triangle(Shape):
 #    def __init__(self, color, is_filled, width, height):
 #        super().__init__(color, is_filled)
 #        self.width = width
@@ -1029,13 +1029,51 @@
 #        super().describe()
 #
 #
-#cirlce = Circle(color="Blue", is_filled=True, radius=25)
-#square = Square(color="Red", is_filled=True, width=14)
-#triangle = Triangle(color="Orange", is_filled=False, width=18, height=20)
+# cirlce = Circle(color="Blue", is_filled=True, radius=25)
+# square = Square(color="Red", is_filled=True, width=14)
+# triangle = Triangle(color="Orange", is_filled=False, width=18, height=20)
 
 # cirlce.describe()
 # square.describe()
-#triangle.describe()
+# triangle.describe()
 
-#===========================================================================================================
+# ===========================================================================================================
 
+# polymorphism = Greek word that means to "have any forms or faces"
+#               poly = Many
+#               Morphe = Form
+
+#               TWO WAYS TO ACHIEVE POLYMORPHISM
+#               1. Inheritance = An object could be treated of the same type as a parent class
+#               2. "Duck typing" = object must have necessary attributes/methods
+
+# 1. Inheritance
+
+
+class Shape:
+    def __init__(self, color):
+        pass
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return self.radius ** 2 * 0.5
+
+
+class Pizza(Circle):
+    def __init__(self, radius, topping):
+        super().__init__(radius)
+        self.topping = topping
+
+    def topping(self):
+        print("Pepperoni")
+
+
+shapes = [Circle(4), Pizza(15, "Pepperoni")]
+
+
+for shape in shapes:
+    print(f"{shape.area()}")
