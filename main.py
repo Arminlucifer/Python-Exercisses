@@ -940,44 +940,102 @@
 # 1                              C(B) <- B(A <- A)
 
 
-class Animal:
-    def __init__(self, name):
-        self.name = name
+# class Animal:
+#    def __init__(self, name):
+#        self.name = name
+#
+#    def eat(self):
+#        print(f"{self.name} is eating")
+#
+#    def sleep(self):
+#        print(f"{self.name} is sleeping")
+#
+#
+# class Shekar(Animal):
+#    def flee(self):
+#        print(f"{self.name} shekar mishe")
+#
+#
+# class Shekarchi(Animal):
+#    def hunt(self):
+#        print(f"{self.name} shekar mikone")
+#
+#
+# class Rabbit(Shekar):
+#    pass
+#
+#
+# class Fish(Shekar, Shekarchi):
+#    pass
+#
+#
+# rabbit = Rabbit("Yalda")
+# fish = Fish("Nemo")
+#
+#
+# rabbit.flee()
+# fish.flee()
+# fish.hunt()
+#
+# rabbit.eat()
+# fish.eat()
+#
+# rabbit.sleep()
+# ============================================================================================================
 
-    def eat(self):
-        print(f"{self.name} is eating")
-
-    def sleep(self):
-        print(f"{self.name} is sleeping")
+# super() = Function used in a child class to call methods from a parent class (superclass)
+#           Allows you to extend the functionality of the inherited methods
 
 
-class Shekar(Animal):
-    def flee(self):
-        print(f"{self.name} shekar mishe")
+#class Shape:
+#    def __init__(self, color, is_filled):
+#        self.color = color
+#        self.is_filled = is_filled
+#
+#    def describe(self):
+#        print(
+#            f"It's {self.color} and {"filled" if self.is_filled else "not filled"}")
+#
+#
+#class Circle(Shape):
+#    def __init__(self, color, is_filled, radius):
+#        super().__init__(color, is_filled)
+#        self.radius = radius
+#
+#    def describe(self):
+#        print(f"It's a circle with an area of {(self.radius ^ 2) * 3.14}cm^2")
+#        super().describe()
+#
+#
+#class Square(Shape):
+#    def __init__(self, color, is_filled, width):
+#        super().__init__(color, is_filled)
+#        self.width = width
+#
+#    def describe(self):
+#        print(f"it's a Square with an area of {self.width ^ 2}cm^2")
+#        super().describe()
+#
+#
+#class Triangle(Shape):
+#    def __init__(self, color, is_filled, width, height):
+#        super().__init__(color, is_filled)
+#        self.width = width
+#        self.height = height
+#
+#    def describe(self):
+#        print(
+#            f"It's a Triangle with an area of {(self.width * self.height) / 2}cm^2")
+#        super().describe()
+#
+#
+#cirlce = Circle(color="Blue", is_filled=True, radius=25)
+#square = Square(color="Red", is_filled=True, width=14)
+#triangle = Triangle(color="Orange", is_filled=False, width=18, height=20)
 
+# cirlce.describe()
+# square.describe()
+#triangle.describe()
 
-class Shekarchi(Animal):
-    def hunt(self):
-        print(f"{self.name} shekar mikone")
+#===========================================================================================================
 
-
-class Rabbit(Shekar):
-    pass
-
-
-class Fish(Shekar, Shekarchi):
-    pass
-
-
-rabbit = Rabbit("Yalda")
-fish = Fish("Nemo")
-
-
-rabbit.flee()
-fish.flee()
-fish.hunt()
-
-rabbit.eat()
-fish.eat()
-
-rabbit.sleep()
