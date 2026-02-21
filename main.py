@@ -897,38 +897,87 @@
 #               Helps with code readability and extensibility
 #               class child(parent)
 
-class Student:
+# class Student:
+#    def __init__(self, name):
+#        self.name = name
+#
+#    def Major(self):
+#        print(f"{self.name}'s Major Is Riazi-Physics")
+#
+#    def Sex(self):
+#        print(f"{self.name}'s Sex Is Male")
+#
+#
+# class Armin(Student):
+#    def nomre(self):
+#        print("18")
+#
+#
+# class Erfan(Student):
+#    def nomre(self):
+#        print("18")
+#
+#
+# class Ali(Student):
+#    def nomre(self):
+#        print("18")
+#
+#
+# armin = Armin("Armin")
+# erfan = Erfan("Erfan")
+# ali = Ali("Ali")
+#
+#
+# erfan.nomre()
+# armin.nomre()
+# armin.Sex()
+# ali.Major()
+
+# multiple inheritance = inherit from more than one parent class
+#               C(A, B)
+
+# multilevel inheritance = inherit from a parent which inherits from another parent
+# 1                              C(B) <- B(A <- A)
+
+
+class Animal:
     def __init__(self, name):
         self.name = name
 
-    def Major(self):
-        print(f"{self.name}'s Major Is Riazi-Physics")
+    def eat(self):
+        print(f"{self.name} is eating")
 
-    def Sex(self):
-        print(f"{self.name}'s Sex Is Male")
-
-
-class Armin(Student):
-    def nomre(self):
-        print("18")
+    def sleep(self):
+        print(f"{self.name} is sleeping")
 
 
-class Erfan(Student):
-    def nomre(self):
-        print("18")
+class Shekar(Animal):
+    def flee(self):
+        print(f"{self.name} shekar mishe")
 
 
-class Ali(Student):
-    def nomre(self):
-        print("18")
+class Shekarchi(Animal):
+    def hunt(self):
+        print(f"{self.name} shekar mikone")
 
 
-armin = Armin("Armin")
-erfan = Erfan("Erfan")
-ali = Ali("Ali")
+class Rabbit(Shekar):
+    pass
 
 
-erfan.nomre()
-armin.nomre()
-armin.Sex()
-ali.Major()
+class Fish(Shekar, Shekarchi):
+    pass
+
+
+rabbit = Rabbit("Yalda")
+fish = Fish("Nemo")
+
+
+rabbit.flee()
+fish.flee()
+fish.hunt()
+
+rabbit.eat()
+fish.eat()
+
+rabbit.sleep()
