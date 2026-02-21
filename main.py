@@ -1050,30 +1050,58 @@
 # 1. Inheritance
 
 
-class Shape:
-    def __init__(self, color):
-        pass
+# class Shape:
+#    def __init__(self, color):
+#        pass
+#
+#
+# class Circle(Shape):
+#    def __init__(self, radius):
+#        self.radius = radius
+#
+#    def area(self):
+#        return self.radius ** 2 * 0.5
+#
+#
+# class Pizza(Circle):
+#    def __init__(self, radius, topping):
+#        super().__init__(radius)
+#        self.topping = topping
+#
+#    def topping(self):
+#        print("Pepperoni")
+#
+#
+# shapes = [Circle(4), Pizza(15, "Pepperoni")]
+#
+#
+# for shape in shapes:
+#    print(f"{shape.area()}")
+
+# ==================================DUCK TYPING==========================================================
+
+class Animal:
+    alive = True
 
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return self.radius ** 2 * 0.5
+class Dog(Animal):
+    def speak(self):
+        print("WOOF")
 
 
-class Pizza(Circle):
-    def __init__(self, radius, topping):
-        super().__init__(radius)
-        self.topping = topping
-
-    def topping(self):
-        print("Pepperoni")
+class Cat(Animal):
+    def speak(self):
+        print("Meow")
 
 
-shapes = [Circle(4), Pizza(15, "Pepperoni")]
+class Car:
+    alive = False
+    def speak(self):
+        print("Honk")
+        
 
+animals = [Dog(), Cat(), Car()]
 
-for shape in shapes:
-    print(f"{shape.area()}")
+for animal in animals:
+    animal.speak()
+    print(animal.alive)
