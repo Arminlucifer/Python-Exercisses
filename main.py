@@ -1144,39 +1144,68 @@
 
 
 # instant method:
+#
+# class Employee:
+#
+#    def __init__(self, name, position):
+#        self.name = name
+#        self.position = position
+#
+#    def get_info(self):
+#        return f"{self.name} = {self.position}"
+#
+#    # static method:
+#
+#    @staticmethod
+#    def is_valid(position):
+#        valid = ["Manager", "Cook", "Cashier", "Janitor"]
+#        return position in valid
+#
+#
+# print(Employee.is_valid("Manager"))
+#
+#
+# class Student:
+#    def __init__(self, name, point):
+#        self.name = name
+#        self.point = point
+#
+#    @staticmethod
+#    def test(aya):
+#        valid = ["Armin", "Goz", "Gooz", "Erfan"]
+#
+#        return aya in valid
+#
+#
+# print(Student.test("Armin"))
+# print(Student.test("Armin"))
+# print(Student.test("Gooze Bozorg"))
 
-class Employee:
 
-    def __init__(self, name, position):
-        self.name = name
-        self.position = position
-
-    def get_info(self):
-        return f"{self.name} = {self.position}"
-
-    # static method:
-
-    @staticmethod
-    def is_valid(position):
-        valid = ["Manager", "Cook", "Cashier", "Janitor"]
-        return position in valid
-
-
-print(Employee.is_valid("Manager"))
+# Class methods = Allow operations related to the class itself
+#           Take (cls) as the first parameter, which represents the class itself
 
 
 class Student:
-    def __init__(self, name, point):
+    count = 0
+    total_gpa = 0
+
+    def __init__(self, name, gpa):
         self.name = name
-        self.point = point
+        self.gpa = gpa
+        Student.count += 1
+        Student.total_gpa += gpa
 
-    @staticmethod
-    def test(aya):
-        valid = ["Armin", "Goz", "Gooz", "Erfan"]
+    @classmethod
+    def get_average_gpa(cls):
+        if cls.count == 0:
+            return 0
+        else:
+            return cls.total_gpa / cls.count
 
-        return aya in valid
 
+s1 = Student("Armin", 2)
+s2 = Student("Erfan", 2)
+s3 = Student("Goze Bozorg", 5)
 
-print(Student.test("Armin"))
-print(Student.test("Armin"))
-print(Student.test("Gooze Bozorg"))
+print(Student.get_average_gpa())
