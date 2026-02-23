@@ -837,7 +837,7 @@
 #              avoid unintended execution)
 # ====================================================================================================================
 # OBJECT ORIENTED:
-# object = AA "Bundle" of relayed attributes (variables) and methods (functions)
+# object = A "Bundle" of replayed attributes (variables) and methods (functions)
 #                   Ex phone, cup, book
 #                   You need a "class" to create many objects
 
@@ -1080,28 +1080,103 @@
 
 # ==================================DUCK TYPING==========================================================
 
-class Animal:
-    alive = True
+# class Animal:
+#    alive = True
+#
+#
+# class Dog(Animal):
+#    def speak(self):
+#        print("WOOF")
+#
+#
+# class Cat(Animal):
+#    def speak(self):
+#        print("Meow")
+#
+#
+# class Car:
+#    alive = False
+#    def speak(self):
+#        print("Honk")
+#
+#
+# animals = [Dog(), Cat(), Car()]
+#
+# for animal in animals:
+#    animal.speak()
+#    print(animal.alive)
+
+# =============================================================================================================
+
+# 1. Inheritance = An object could be treated of the same type as a parent class
+#               2. "Duck typing" = object must have necessary attributes/methods
 
 
-class Dog(Animal):
-    def speak(self):
-        print("WOOF")
+# class Animal:
+#
+#    def speak(self):
+#            print("aaaa")
+#
+# class Dog(Animal):
+#        pass
+#
+# class Cat(Animal):
+#        pass
+#
+# class Mouse(Animal):
+#        pass
+#
+# class Gooz(Mouse):
+#        pass
+#
+#
+# items = [Dog(), Cat(), Mouse(), Gooz()]
+#
+#
+# for item in items:
+#    item.speak()
+
+# Static methods: a method that belongs to a class rather than anu object from that class (instance)
+#               usually used for general utility functions
+
+# instant-methods = best for operations on instances of the class (objects)
+# static-methods = best for utility functions that do not need access to class data
 
 
-class Cat(Animal):
-    def speak(self):
-        print("Meow")
+# instant method:
+
+class Employee:
+
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+
+    def get_info(self):
+        return f"{self.name} = {self.position}"
+
+    # static method:
+
+    @staticmethod
+    def is_valid(position):
+        valid = ["Manager", "Cook", "Cashier", "Janitor"]
+        return position in valid
 
 
-class Car:
-    alive = False
-    def speak(self):
-        print("Honk")
-        
+print(Employee.is_valid("Manager"))
 
-animals = [Dog(), Cat(), Car()]
 
-for animal in animals:
-    animal.speak()
-    print(animal.alive)
+class Student:
+    def __init__(self, name, point):
+        self.name = name
+        self.point = point
+
+    @staticmethod
+    def test(aya):
+        valid = ["Armin", "Goz", "Gooz", "Erfan"]
+
+        return aya in valid
+
+
+print(Student.test("Armin"))
+print(Student.test("Armin"))
+print(Student.test("Gooze Bozorg"))
