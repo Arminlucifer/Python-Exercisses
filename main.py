@@ -1136,7 +1136,7 @@
 # for item in items:
 #    item.speak()
 
-# Static methods: a method that belongs to a class rather than anu object from that class (instance)
+# Static methods: a method that belongs to a class rather than any object from that class (instance)
 #               usually used for general utility functions
 
 # instant-methods = best for operations on instances of the class (objects)
@@ -1186,26 +1186,101 @@
 #           Take (cls) as the first parameter, which represents the class itself
 
 
-class Student:
-    count = 0
-    total_gpa = 0
+# class Student:
+#    count = 0
+#    total_gpa = 0
+#
+#    def __init__(self, name, gpa):
+#        self.name = name
+#        self.gpa = gpa
+#        Student.count += 1
+#        Student.total_gpa += gpa
+#
+#    @classmethod
+#    def get_average_gpa(cls):
+#        if cls.count == 0:
+#            return 0
+#        else:
+#            return cls.total_gpa / cls.count
+#
+#
+# s1 = Student("Armin", 2)
+# s2 = Student("Erfan", 2)
+# s3 = Student("Goze Bozorg", 5)
+#
+# print(Student.get_average_gpa())
+#
+#
+# class Karmand:
+#    count = 0
+#    hoghogh = 0
+#
+#    def __init__(self, name, hoghogh):
+#        self.name = name
+#        self.hoghogh = hoghogh
+#        Karmand.count += 1
+#        Karmand.hoghogh += hoghogh
+#
+#    @classmethod
+#    def average(cls):
+#            if cls.count == 0:
+#                return 0
+#            else:
+#                return cls.hoghogh / cls.count
+#
+#
+# k1 = Karmand("Armin", 1000)
+# k2 = Karmand("Erfan", 1500)
+# k3 = Karmand("Goooooz", 7000)
+#
+# print(f"Average Hoghogh = {Karmand.average():.2f}$")
 
-    def __init__(self, name, gpa):
-        self.name = name
-        self.gpa = gpa
-        Student.count += 1
-        Student.total_gpa += gpa
 
-    @classmethod
-    def get_average_gpa(cls):
-        if cls.count == 0:
-            return 0
+# Magic methods = Dunder methods (double underscore)  __init__, __str__, __eq__
+#                They are automatically called by many of Python's built-in operations.
+#                They allow developers to define or customize the behavior of objects
+
+
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return f"{self.title} by {self.author} and number of pages are :{self.pages}"
+
+    def __eq__(self, other):
+        return self.author == other.author
+
+    def __gt__(self, other):  # inja shart gozashti ama mishe ba __ls__ hamm okeyesh kard
+        if self.pages > other.pages:
+            return True
         else:
-            return cls.total_gpa / cls.count
+            return False
+
+    def __add__(self, other):
+        return self.pages + other.pages
+
+    def __contains__(self, keyword):
+        return keyword in self.author
+
+    def __getitem__(self, key):
+        if key == "title":
+            return self.title
+        elif key == "Author":
+            return self.author
+        elif key == "Pages":
+            return self.pages
+        else:
+            return f"The '{key}' is not valid "
 
 
-s1 = Student("Armin", 2)
-s2 = Student("Erfan", 2)
-s3 = Student("Goze Bozorg", 5)
+book1 = Book("Dodool Talayan Gharb Gara", "Erfansfr", 17)
+book2 = Book("TORKISM", "Vasam", 2)
+book3 = Book("Gay Hamchoon Siahi Shab", "Armin", 22)
+book4 = Book("Chegoone Khar Nabashim", "Vasam", 102)
+book5 = Book("Chegoone Khar Bashim", "Erfansfr", 103)
 
-print(Student.get_average_gpa())
+
+print(book5["DODOl"])
