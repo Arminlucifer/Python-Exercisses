@@ -1414,7 +1414,7 @@ employees = ("Armin", "Erfan", "Mammad", "Ali")
 file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
 
 try:
-    with open(file_path, "a") as file:  # x = writes if doesn't exist, a= append, w = overwrite
+    with open(file_path, "w") as file:  # x = writes if doesn't exist, a= append, w = overwrite
         for employee in employees:
             file.write(employee + "\n")
         print(f"txt file '{file_path} was created")
@@ -1447,3 +1447,46 @@ with open(file_path_csv, "w", newline="") as file:
     for row in members:
         writer.writerow(row)
         print(f"The '{file_path_csv}' was created")
+
+# ====================Python reading files (.txt, .json, .csv)======================================
+
+
+# read .txt:
+
+file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
+
+try:
+    with open(file_path, "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("That file doesn't exist")
+except PermissionError:
+    print("You don't have permission to read this file")
+
+# .json:
+
+file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"
+
+try:
+    with open(file_path_json, "r") as file:
+        content = json.load(file)
+        print(content)  # mishe behesh key dad (content[0])
+except FileNotFoundError:
+    print("That file doesn't exist")
+except PermissionError:
+    print("You don't have permission to read this file")
+
+# .csv:
+
+file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"
+
+try:
+    with open(file_path_csv, "r") as file:
+        content = csv.reader(file)
+        for line in content:
+            print(line)  # mishe behesh key dad (line[0])
+except FileNotFoundError:
+    print("That file doesn't exist")
+except PermissionError:
+    print("You don't have permission to read this file")
