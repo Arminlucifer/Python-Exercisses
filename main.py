@@ -1289,7 +1289,7 @@
 #           Benefit: Add additional logic when read, write, or delete attributes
 #           Gives you getter, setter, and deleter method
 
-#class Rectangle:
+# class Rectangle:
 #    def __init__(self, width, height):
 #        self._width = width
 #        self._height = height
@@ -1327,15 +1327,44 @@
 #        print("Width has been deleted")
 #
 #
-#rectangle = Rectangle(4, 5)
+# rectangle = Rectangle(4, 5)
 
-#rectangle.width = 7
-#rectangle.height = 0
+# rectangle.width = 7
+# rectangle.height = 0
 
-#print(rectangle.width)
-#print(rectangle.height)
+# print(rectangle.width)
+# print(rectangle.height)
 
 
-#del rectangle.width
-#del rectangle.height
+# del rectangle.width
+# del rectangle.height
 
+
+# Decorator = A function that extends the behavior of another function
+#           w/o modifying the base function
+#           pass the base function as an argument to the decorator
+
+#           @add_sprinkles
+#           get_ice_cream("vanilla")
+
+def add_sprinkles(func):
+    def wrapper(*args, **kwargs):
+        print("You've added sprinkles")
+        func(*args, **kwargs)
+    return wrapper
+
+
+def add_fudge(func):
+    def wrapper(*args, **kwargs):
+        print("You've added fudge")
+        func(*args, **kwargs)
+    return wrapper
+
+
+@add_sprinkles
+@add_fudge
+def get_ice_cream(flavor):
+    print(f"Here is your {flavor} ice cream")
+
+
+get_ice_cream("Vanilla")
