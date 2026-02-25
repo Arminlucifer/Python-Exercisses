@@ -1407,86 +1407,108 @@
 
 # ------------------------------Python writing files (.txt, .json, .csv)-------------------------------
 # .txt
-import csv
-import json
-employees = ("Armin", "Erfan", "Mammad", "Ali")
+# import csv
+# import json
+# employees = ("Armin", "Erfan", "Mammad", "Ali")#
 
-file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
+# file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"#
 
-try:
-    with open(file_path, "w") as file:  # x = writes if doesn't exist, a= append, w = overwrite
-        for employee in employees:
-            file.write(employee + "\n")
-        print(f"txt file '{file_path} was created")
-except FileExistsError:
-    print("That file already exists! ")
+# try:
+#    with open(file_path, "w") as file:  # x = writes if doesn't exist, a= append, w = overwrite
+#        for employee in employees:
+#            file.write(employee + "\n")
+#        print(f"txt file '{file_path} was created")
+# except FileExistsError:
+#    print("That file already exists! ")#
 
 # .json = we use json file when we have key values such as dictionary
-student = {
-    "name": "Armin",
-    "age": 22,
-    "job": "developer"
-}
+# student = {
+#    "name": "Armin",
+#    "age": 22,
+#    "job": "developer"
+# }#
 
-file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"
+# file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"#
 
-with open(file_path_json, "w") as file:
-    json.dump(student, file, indent=4)
-    print(f"json file '{file_path_json} was created")
+# with open(file_path_json, "w") as file:
+#    json.dump(student, file, indent=4)
+#    print(f"json file '{file_path_json} was created")#
 
 # .csv: comma seprated values, used in 2d shit
-members = [["name", "age", "job"],
-           ["Armin", 22, "Developer"],
-           ["Erfan", 22, "Developer"],
-           ["Mammad", 20, "Unemployed"]]
+# members = [["name", "age", "job"],
+#           ["Armin", 22, "Developer"],
+#           ["Erfan", 22, "Developer"],
+#           ["Mammad", 20, "Unemployed"]]#
 
-file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"
+# file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"#
 
-with open(file_path_csv, "w", newline="") as file:
-    writer = csv.writer(file)
-    for row in members:
-        writer.writerow(row)
-        print(f"The '{file_path_csv}' was created")
+# with open(file_path_csv, "w", newline="") as file:
+#    writer = csv.writer(file)
+#    for row in members:
+#        writer.writerow(row)
+#        print(f"The '{file_path_csv}' was created")
 
 # ====================Python reading files (.txt, .json, .csv)======================================
 
 
 # read .txt:
 
-file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
-
-try:
-    with open(file_path, "r") as file:
-        content = file.read()
-        print(content)
-except FileNotFoundError:
-    print("That file doesn't exist")
-except PermissionError:
-    print("You don't have permission to read this file")
-
+# file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
+#
+# try:
+#    with open(file_path, "r") as file:
+#        content = file.read()
+#        print(content)
+# except FileNotFoundError:
+#    print("That file doesn't exist")
+# except PermissionError:
+#    print("You don't have permission to read this file")
+#
 # .json:
-
-file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"
-
-try:
-    with open(file_path_json, "r") as file:
-        content = json.load(file)
-        print(content)  # mishe behesh key dad (content[0])
-except FileNotFoundError:
-    print("That file doesn't exist")
-except PermissionError:
-    print("You don't have permission to read this file")
-
+#
+# file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"
+#
+# try:
+#    with open(file_path_json, "r") as file:
+#        content = json.load(file)
+#        print(content)  # mishe behesh key dad (content[0])
+# except FileNotFoundError:
+#    print("That file doesn't exist")
+# except PermissionError:
+#    print("You don't have permission to read this file")
+#
 # .csv:
+#
+# file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"
+#
+# try:
+#    with open(file_path_csv, "r") as file:
+#        content = csv.reader(file)
+#        for line in content:
+#            print(line)  # mishe behesh key dad (line[0])
+# except FileNotFoundError:
+#    print("That file doesn't exist")
+# except PermissionError:
+#    print("You don't have permission to read this file")
 
-file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"
+# ==============================Date and Time==============================================
+import datetime
 
-try:
-    with open(file_path_csv, "r") as file:
-        content = csv.reader(file)
-        for line in content:
-            print(line)  # mishe behesh key dad (line[0])
-except FileNotFoundError:
-    print("That file doesn't exist")
-except PermissionError:
-    print("You don't have permission to read this file")
+date = datetime.date(2026, 4, 10)
+print(date)
+today = datetime.date.today()
+print(today)
+
+time = datetime.time(12, 30, 0)
+print(time)
+now = datetime.datetime.now()
+now = now.strftime("%H:%M:%S %Y,%m,%d")
+print(now)
+
+target_date_time = datetime.datetime(2030, 1, 2, 12, 30, 1)
+current_time = datetime.datetime.now()
+
+if current_time > target_date_time:
+    print("Target date has passed")
+else:
+    print("Target date has NOT passed")
