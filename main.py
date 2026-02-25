@@ -1241,46 +1241,101 @@
 #                They allow developers to define or customize the behavior of objects
 
 
-class Book:
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+# class Book:
+#    def __init__(self, title, author, pages):
+#        self.title = title
+#        self.author = author
+#        self.pages = pages
+#
+#    def __str__(self):
+#        return f"{self.title} by {self.author} and number of pages are :{self.pages}"
+#
+#    def __eq__(self, other):
+#        return self.author == other.author
+#
+#    def __gt__(self, other):  # inja shart gozashti ama mishe ba __ls__ hamm okeyesh kard
+#        if self.pages > other.pages:
+#            return True
+#        else:
+#            return False
+#
+#    def __add__(self, other):
+#        return self.pages + other.pages
+#
+#    def __contains__(self, keyword):
+#        return keyword in self.author
+#
+#    def __getitem__(self, key):
+#        if key == "title":
+#            return self.title
+#        elif key == "Author":
+#            return self.author
+#        elif key == "Pages":
+#            return self.pages
+#        else:
+#            return f"The '{key}' is not valid "
+#
+#
+# book1 = Book("Dodool Talayan Gharb Gara", "Erfansfr", 17)
+# book2 = Book("TORKISM", "Vasam", 2)
+# book3 = Book("Gay Hamchoon Siahi Shab", "Armin", 22)
+# book4 = Book("Chegoone Khar Nabashim", "Vasam", 102)
+# book5 = Book("Chegoone Khar Bashim", "Erfansfr", 103)
+#
+#
+# print(book5["DODOl"])
 
-    def __str__(self):
-        return f"{self.title} by {self.author} and number of pages are :{self.pages}"
+# @property = Decorator used to define a mathod as a property (It can be accesses like am attribute)
+#           Benefit: Add additional logic when read, write, or delete attributes
+#           Gives you getter, setter, and deleter method
 
-    def __eq__(self, other):
-        return self.author == other.author
+#class Rectangle:
+#    def __init__(self, width, height):
+#        self._width = width
+#        self._height = height
+#
+#    @property
+#    def width(self):
+#        return f"{self._width:.1f}cm"
+#
+#    @property
+#    def height(self):
+#        return f"{self._height:.1f}cm"
+#
+#    @width.setter
+#    def width(self, new_width):
+#        if new_width > 0:
+#            self._width = new_width
+#        else:
+#            print("Width must be greater than zero")
+#
+#    @height.setter
+#    def height(self, new_height):
+#        if new_height > 0:
+#            self._height = new_height
+#        else:
+#            print("Height must be greater than zero")
+#
+#    @height.deleter
+#    def height(self):
+#        del self._height
+#        print("Height has been deleted")
+#
+#    @width.deleter
+#    def width(self):
+#        del self._width
+#        print("Width has been deleted")
+#
+#
+#rectangle = Rectangle(4, 5)
 
-    def __gt__(self, other):  # inja shart gozashti ama mishe ba __ls__ hamm okeyesh kard
-        if self.pages > other.pages:
-            return True
-        else:
-            return False
+#rectangle.width = 7
+#rectangle.height = 0
 
-    def __add__(self, other):
-        return self.pages + other.pages
-
-    def __contains__(self, keyword):
-        return keyword in self.author
-
-    def __getitem__(self, key):
-        if key == "title":
-            return self.title
-        elif key == "Author":
-            return self.author
-        elif key == "Pages":
-            return self.pages
-        else:
-            return f"The '{key}' is not valid "
+#print(rectangle.width)
+#print(rectangle.height)
 
 
-book1 = Book("Dodool Talayan Gharb Gara", "Erfansfr", 17)
-book2 = Book("TORKISM", "Vasam", 2)
-book3 = Book("Gay Hamchoon Siahi Shab", "Armin", 22)
-book4 = Book("Chegoone Khar Nabashim", "Vasam", 102)
-book5 = Book("Chegoone Khar Bashim", "Erfansfr", 103)
+#del rectangle.width
+#del rectangle.height
 
-
-print(book5["DODOl"])
