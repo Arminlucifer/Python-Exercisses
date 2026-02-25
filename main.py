@@ -1347,24 +1347,44 @@
 #           @add_sprinkles
 #           get_ice_cream("vanilla")
 
-def add_sprinkles(func):
-    def wrapper(*args, **kwargs):
-        print("You've added sprinkles")
-        func(*args, **kwargs)
-    return wrapper
+#def add_sprinkles(func):
+#    def wrapper(*args, **kwargs):
+#        print("You've added sprinkles")
+#        func(*args, **kwargs)
+#    return wrapper
+#
+#
+#def add_fudge(func):
+#    def wrapper(*args, **kwargs):
+#        print("You've added fudge")
+#        func(*args, **kwargs)
+#    return wrapper
+#
+#
+#@add_sprinkles
+#@add_fudge
+#def get_ice_cream(flavor):
+#    print(f"Here is your {flavor} ice cream")
+#
+#
+#get_ice_cream("Vanilla")
 
 
-def add_fudge(func):
-    def wrapper(*args, **kwargs):
-        print("You've added fudge")
-        func(*args, **kwargs)
-    return wrapper
+#exception = An event that interrupts the flow of a program
+#           (ZeroDivisionError, TypeError, ValueError)
+#           1.try, 2.except, 3.finally
 
 
-@add_sprinkles
-@add_fudge
-def get_ice_cream(flavor):
-    print(f"Here is your {flavor} ice cream")
 
 
-get_ice_cream("Vanilla")
+try:
+    number = int(input("Please enter a number: "))
+    print(1 / number)
+except ZeroDivisionError:
+    print("You Can't devide by zero IDIOT!")
+except ValueError:
+    print("Enter a Valid number")
+except Exception:
+    print("Something went wrong!")
+finally:
+    print("Do some clean-up here")
