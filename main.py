@@ -1389,18 +1389,61 @@
 
 # -----------------------------------Python file detection---------------------------------------------
 
-import os
+# import os
+#
+# file_path = "test.txt"
+#
+#
+# if os.path.exists(file_path):
+#    print(f"The location {file_path} exists! ")
+#
+#    if os.path.isfile(file_path):
+#        print("That's a file! ")
+#    elif os.path.isdir(file_path):
+#        print("That a directory")
+#
+# else:
+#    print("That location doesn't exist")
 
-file_path = "test.txt"
+# ------------------------------Python writing files (.txt, .json, .csv)-------------------------------
+# .txt
+import csv
+import json
+employees = ("Armin", "Erfan", "Mammad", "Ali")
 
+file_path = "C:\\Users\\awrmi\\OneDrive\\Desktop\\output.txt"
 
-if os.path.exists(file_path):
-    print(f"The location {file_path} exists! ")
+try:
+    with open(file_path, "a") as file:  # x = writes if doesn't exist, a= append, w = overwrite
+        for employee in employees:
+            file.write(employee + "\n")
+        print(f"txt file '{file_path} was created")
+except FileExistsError:
+    print("That file already exists! ")
 
-    if os.path.isfile(file_path):
-        print("That's a file! ")
-    elif os.path.isdir(file_path):
-        print("That a directory")
+# .json = we use json file when we have key values such as dictionary
+student = {
+    "name": "Armin",
+    "age": 22,
+    "job": "developer"
+}
 
-else:
-    print("That location doesn't exist")
+file_path_json = "C:\\Users\\awrmi\\OneDrive\\Desktop\\student.json"
+
+with open(file_path_json, "w") as file:
+    json.dump(student, file, indent=4)
+    print(f"json file '{file_path_json} was created")
+
+# .csv: comma seprated values, used in 2d shit
+members = [["name", "age", "job"],
+           ["Armin", 22, "Developer"],
+           ["Erfan", 22, "Developer"],
+           ["Mammad", 20, "Unemployed"]]
+
+file_path_csv = "C:\\Users\\awrmi\\OneDrive\\Desktop\\members.csv"
+
+with open(file_path_csv, "w", newline="") as file:
+    writer = csv.writer(file)
+    for row in members:
+        writer.writerow(row)
+        print(f"The '{file_path_csv}' was created")
