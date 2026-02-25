@@ -1492,23 +1492,24 @@
 #    print("You don't have permission to read this file")
 
 # ==============================Date and Time==============================================
-import datetime
+# import datetime
+#
+# date = datetime.date(2026, 4, 10)
+# print(date)
+# today = datetime.date.today()
+# print(today)
+#
+# time = datetime.time(12, 30, 0)
+# print(time)
+# now = datetime.datetime.now()
+# now = now.strftime("%H:%M:%S %Y,%m,%d")
+# print(now)
+#
+# target_date_time = datetime.datetime(2030, 1, 2, 12, 30, 1)
+# current_time = datetime.datetime.now()
+#
+# if current_time > target_date_time:
+#    print("Target date has passed")
+# else:
+#    print("Target date has NOT passed")
 
-date = datetime.date(2026, 4, 10)
-print(date)
-today = datetime.date.today()
-print(today)
-
-time = datetime.time(12, 30, 0)
-print(time)
-now = datetime.datetime.now()
-now = now.strftime("%H:%M:%S %Y,%m,%d")
-print(now)
-
-target_date_time = datetime.datetime(2030, 1, 2, 12, 30, 1)
-current_time = datetime.datetime.now()
-
-if current_time > target_date_time:
-    print("Target date has passed")
-else:
-    print("Target date has NOT passed")
