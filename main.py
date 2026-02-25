@@ -1135,7 +1135,7 @@
 #
 # for item in items:
 #    item.speak()
-
+# -----------------------------------------------------------------------------------------------------
 # Static methods: a method that belongs to a class rather than any object from that class (instance)
 #               usually used for general utility functions
 
@@ -1181,7 +1181,7 @@
 # print(Student.test("Armin"))
 # print(Student.test("Gooze Bozorg"))
 
-
+# -------------------------------------------------------------------------------------------------------
 # Class methods = Allow operations related to the class itself
 #           Take (cls) as the first parameter, which represents the class itself
 
@@ -1235,7 +1235,7 @@
 #
 # print(f"Average Hoghogh = {Karmand.average():.2f}$")
 
-
+# --------------------------------------------------------------------------------------------
 # Magic methods = Dunder methods (double underscore)  __init__, __str__, __eq__
 #                They are automatically called by many of Python's built-in operations.
 #                They allow developers to define or customize the behavior of objects
@@ -1284,7 +1284,7 @@
 #
 #
 # print(book5["DODOl"])
-
+# -----------------------------------------------------------------------------------------------
 # @property = Decorator used to define a mathod as a property (It can be accesses like am attribute)
 #           Benefit: Add additional logic when read, write, or delete attributes
 #           Gives you getter, setter, and deleter method
@@ -1340,51 +1340,67 @@
 # del rectangle.height
 
 
-# Decorator = A function that extends the behavior of another function
+# `````````````````````````Decorator = A function that extends the behavior of another function``````````
 #           w/o modifying the base function
 #           pass the base function as an argument to the decorator
 
 #           @add_sprinkles
 #           get_ice_cream("vanilla")
 
-#def add_sprinkles(func):
+# def add_sprinkles(func):
 #    def wrapper(*args, **kwargs):
 #        print("You've added sprinkles")
 #        func(*args, **kwargs)
 #    return wrapper
 #
 #
-#def add_fudge(func):
+# def add_fudge(func):
 #    def wrapper(*args, **kwargs):
 #        print("You've added fudge")
 #        func(*args, **kwargs)
 #    return wrapper
 #
 #
-#@add_sprinkles
-#@add_fudge
-#def get_ice_cream(flavor):
+# @add_sprinkles
+# @add_fudge
+# def get_ice_cream(flavor):
 #    print(f"Here is your {flavor} ice cream")
 #
 #
-#get_ice_cream("Vanilla")
+# get_ice_cream("Vanilla")
 
 
-#exception = An event that interrupts the flow of a program
+# ----------------------exception = An event that interrupts the flow of a program--------------------
 #           (ZeroDivisionError, TypeError, ValueError)
 #           1.try, 2.except, 3.finally
 
 
+# try:
+#    number = int(input("Please enter a number: "))
+#    print(1 / number)
+# except ZeroDivisionError:
+#    print("You Can't devide by zero IDIOT!")
+# except ValueError:
+#    print("Enter a Valid number")
+# except Exception:
+#    print("Something went wrong!")
+# finally:
+#    print("Do some clean-up here")
+
+# -----------------------------------Python file detection---------------------------------------------
+
+import os
+
+file_path = "test.txt"
 
 
-try:
-    number = int(input("Please enter a number: "))
-    print(1 / number)
-except ZeroDivisionError:
-    print("You Can't devide by zero IDIOT!")
-except ValueError:
-    print("Enter a Valid number")
-except Exception:
-    print("Something went wrong!")
-finally:
-    print("Do some clean-up here")
+if os.path.exists(file_path):
+    print(f"The location {file_path} exists! ")
+
+    if os.path.isfile(file_path):
+        print("That's a file! ")
+    elif os.path.isdir(file_path):
+        print("That a directory")
+
+else:
+    print("That location doesn't exist")
