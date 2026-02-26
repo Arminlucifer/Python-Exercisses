@@ -43,12 +43,35 @@ while running:
         match user:
             case "1":
                 my_account.show_balance
-           # case 2:
-                # amount = input("Alright, HOW MUCH? ")
-          #  case 3:
-          #      pass
-          #  case 4:
-          #      pass
+            case "2":
+                deposit_running = True
+                while deposit_running:
+                    amount = input("Alright, HOW MUCH? (b)ack $").lower()
+                    try:
+                        match user:
+                            case "b":
+                                print("Bruh make your decission")
+                                for i in range(3):
+                                    print("loading...")
+                                    time.sleep(1)
+                                deposit_running = False
+                                break
+                            case amount.isdigit():
+                                float(amount)
+                                my_account.deposit(amount)
+                                print("Done")
+                                deposit_running = False
+                                break
+                    except ValueError:
+                        print(
+                            f"Bro are you KIDDING? YOU Can't deposit {amount} in your shitty bank account")
+                        continue
+
+            case "3":
+                
+                
+
+
     except ValueError:
         print("I SAID NUMBER IDIOT")
         for i in range(3):
