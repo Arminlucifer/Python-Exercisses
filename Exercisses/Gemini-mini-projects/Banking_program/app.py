@@ -9,6 +9,10 @@ class Account:
     def show_balance(self):
         print(f"Your Balance: {self.__balance}$")
 
+    @property
+    def balance(self):
+        return self.__balance
+
     def deposit(self, amount):
         self.__balance += amount
         print(f"Current Balance: {self.__balance}$")
@@ -24,9 +28,29 @@ class Account:
             return self.__balance
 
 
+class SavingAccount(Account):
+    def __init__(self, balance, interest_rate):
+        super().__init__(balance)
+        self.interest_rate = interest_rate
+        self.last_interest_time = 0
+
+    def apply_interest(self):
+        current_time = time.time()
+        if current_time - self.last_interest_time >= 60:
+            interest = self.balance * self.interest_rate
+
+            print(f"Adding interest: {interest}$")
+            self.deposit(interest)
+            self.last_interest_time = current_time
+            print("Interest applied successfully!")
+        else:
+            remaining = 60 - (current_time - self.last_interest_time)
+            print(f"Chill bro! You have to wait {remaining} more seconds")
+
+
 running = True
 
-my_account = Account(100)
+my_account = SavingAccount(100, 0.05)
 
 while running:
     print("********Welcome!********")
@@ -37,8 +61,9 @@ while running:
     print("2.Deposit Money")
     print("3.Withdraw Money")
     print("4.Exit")
+    print("Add interest")
     user = input(
-        "Enter a number: (1/2/3/4) ")
+        "Enter a number: (1/2/3/4/5) ")
 
     if user.isdigit():
         match user:
@@ -95,6 +120,9 @@ while running:
                 print("Thanks god you are finally leaving me alone")
                 running = False
                 break
+
+            case "5":
+                my_account.apply_interest()
     else:
         print("I SAID NUMBER IDIOT")
         for i in range(3):
