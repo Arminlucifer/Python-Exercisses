@@ -47,32 +47,31 @@ while running:
                 deposit_running = True
                 while deposit_running:
                     amount = input("Alright, HOW MUCH? (b)ack $").lower()
-                    try:
-                        match amount:
-                            case "b":
-                                print("Bruh make your decission")
-                                for i in range(3):
-                                    print("loading...")
-                                    time.sleep(1)
-                                deposit_running = False
-                                break
-                            case a if a.isdigit():
-                                amount = float(amount)
-                                my_account.deposit(amount)
-                                print("Done")
-                                deposit_running = False
-                                break
-                    except ValueError:
-                        print(
-                            f"Bro are you KIDDING? YOU Can't deposit {amount} in your shitty bank account")
-                        continue
+                    match amount:
+                        case "b":
+                            print("Bruh make your decission")
+                            for i in range(3):
+                                print("loading...")
+                                time.sleep(1)
+                            deposit_running = False
+                            break
+                        case a if a.isdigit():
+                            amount = float(amount)
+                            my_account.deposit(amount)
+                            print("Done")
+                            deposit_running = False
+                            break
+                        case _:
+                            print(
+                                f"Bro are you KIDDING? YOU Can't deposit '{amount}' in your shitty bank account")
+                            continue
 
             case "3":
                 withdraw_running = True
                 while withdraw_running:
                     amount = input("Alright, HOW MUCH? (b)ack $").lower()
                     try:
-                        match user:
+                        match amount:
                             case "b":
                                 print("Bruh make your decission")
                                 for i in range(3):
