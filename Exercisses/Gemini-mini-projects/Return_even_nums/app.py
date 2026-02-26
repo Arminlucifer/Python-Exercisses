@@ -4,4 +4,4 @@ Numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
            42, 43, 44, 45, 46, 47, 48, 49, 50)
 
 print(
-    f"Even Numbers Which Can be Devided by 5: {[num for num in Numbers if num % 2 == 0 and num % 5 == 0]}")
+    f"Even Numbers Which are divisible by 5: {[num for num in Numbers if num % 2 == 0 and num % 5 == 0]}")
