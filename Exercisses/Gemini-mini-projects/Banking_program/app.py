@@ -17,8 +17,9 @@ class Account:
     def withdraw(self, amount):
         if self.__balance < amount:
             print(f"You don't have {amount}$ in your bank account")
+            return self.__balance
         else:
-            self.__balance - amount
+            self.__balance = self.__balance - amount
             print(f"Current Balance: {self.__balance}$")
             return self.__balance
 
@@ -70,25 +71,24 @@ while running:
                 withdraw_running = True
                 while withdraw_running:
                     amount = input("Alright, HOW MUCH? (b)ack $").lower()
-                    try:
-                        match amount:
-                            case "b":
-                                print("Bruh make your decission")
-                                for i in range(3):
-                                    print("loading...")
-                                    time.sleep(1)
-                                withdraw_running = False
-                                break
-                            case amount.isdigit():
-                                float(amount)
-                                my_account.withdraw(amount)
-                                print("Done")
-                                withdraw_running = False
-                                break
-                    except ValueError:
-                        print(
-                            f"Bro are you KIDDING? YOU Can't withdraw {amount} in your shitty bank account")
-                        continue
+                    match amount:
+                        case "b":
+                            print("Bruh make your decission")
+                            for i in range(3):
+                                print("loading...")
+                                time.sleep(1)
+                            deposit_running = False
+                            break
+                        case a if a.isdigit():
+                            amount = float(amount)
+                            my_account.withdraw(amount)
+                            print("Done")
+                            deposit_running = False
+                            break
+                        case _:
+                            print(
+                                f"Bro are you KIDDING? YOU Can't withdraw '{amount}' in your shitty bank account")
+                            continue
 
             case "4":
                 print("Thanks god you are finally leaving me alone")
