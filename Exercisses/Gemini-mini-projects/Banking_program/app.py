@@ -39,7 +39,7 @@ while running:
     user = input(
         "Enter a number: (1/2/3/4) ")
 
-    try:
+    if user.isdigit():
         match user:
             case "1":
                 my_account.show_balance
@@ -48,7 +48,7 @@ while running:
                 while deposit_running:
                     amount = input("Alright, HOW MUCH? (b)ack $").lower()
                     try:
-                        match user:
+                        match amount:
                             case "b":
                                 print("Bruh make your decission")
                                 for i in range(3):
@@ -56,8 +56,8 @@ while running:
                                     time.sleep(1)
                                 deposit_running = False
                                 break
-                            case amount.isdigit():
-                                float(amount)
+                            case a if a.isdigit():
+                                amount = float(amount)
                                 my_account.deposit(amount)
                                 print("Done")
                                 deposit_running = False
@@ -91,19 +91,15 @@ while running:
                             f"Bro are you KIDDING? YOU Can't withdraw {amount} in your shitty bank account")
                         continue
 
-    except ValueError:
+            case "4":
+                print("Thanks god you are finally leaving me alone")
+                running = False
+                break
+    else:
         print("I SAID NUMBER IDIOT")
         for i in range(3):
             print("please wait...")
             time.sleep(1)
             continue
-
-    except Exception:
-        print("Something Went Wrong")
-        for i in range(3):
-            print("please wait...")
-            time.sleep(1)
-            continue
-
 
 print("Have a shitty day < 3")
