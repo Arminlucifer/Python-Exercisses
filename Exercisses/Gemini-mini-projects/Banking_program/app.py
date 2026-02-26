@@ -10,7 +10,7 @@ class Account:
         print(f"Your Balance: {self.__balance}$")
 
     def deposit(self, amount):
-        self.__balance + amount
+        self.__balance += amount
         print(f"Current Balance: {self.__balance}$")
         return self.__balance
 
@@ -78,13 +78,13 @@ while running:
                             for i in range(3):
                                 print("loading...")
                                 time.sleep(1)
-                            deposit_running = False
+                            withdraw_running = False
                             break
                         case a if a.isdigit():
                             amount = float(amount)
                             my_account.withdraw(amount)
                             print("Done")
-                            deposit_running = False
+                            withdraw_running = False
                             break
                         case _:
                             print(
