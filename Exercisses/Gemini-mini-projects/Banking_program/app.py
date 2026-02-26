@@ -68,9 +68,28 @@ while running:
                         continue
 
             case "3":
-                
-                
-
+                withdraw_running = True
+                while withdraw_running:
+                    amount = input("Alright, HOW MUCH? (b)ack $").lower()
+                    try:
+                        match user:
+                            case "b":
+                                print("Bruh make your decission")
+                                for i in range(3):
+                                    print("loading...")
+                                    time.sleep(1)
+                                withdraw_running = False
+                                break
+                            case amount.isdigit():
+                                float(amount)
+                                my_account.withdraw(amount)
+                                print("Done")
+                                withdraw_running = False
+                                break
+                    except ValueError:
+                        print(
+                            f"Bro are you KIDDING? YOU Can't withdraw {amount} in your shitty bank account")
+                        continue
 
     except ValueError:
         print("I SAID NUMBER IDIOT")
@@ -87,4 +106,4 @@ while running:
             continue
 
 
-print("Have a nice day!")
+print("Have a shitty day < 3")
