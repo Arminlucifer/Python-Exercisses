@@ -19,7 +19,7 @@ class Account:
             print(f"You don't have {amount}$ in your bank account")
             return self.__balance
         else:
-            self.__balance = self.__balance - amount
+            self.__balance -= amount
             print(f"Current Balance: {self.__balance}$")
             return self.__balance
 
@@ -35,7 +35,7 @@ while running:
     print()
     print("1.Check balance")
     print("2.Deposit Money")
-    print("3. Withdraw Money")
+    print("3.Withdraw Money")
     print("4.Exit")
     user = input(
         "Enter a number: (1/2/3/4) ")
@@ -70,6 +70,7 @@ while running:
             case "3":
                 withdraw_running = True
                 while withdraw_running:
+                    my_account.show_balance
                     amount = input("Alright, HOW MUCH? (b)ack $").lower()
                     match amount:
                         case "b":
