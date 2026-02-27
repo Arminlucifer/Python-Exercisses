@@ -1586,7 +1586,8 @@
 
 # ========================================PyQt5================================================
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
+                             QWidget, QVBoxLayout, QHBoxLayout, QGridLayout)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QFont
 from PyQt5.QtGui import QPixmap
@@ -1599,35 +1600,42 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("My Cool First Window!")
         self.setGeometry(700, 300, 500, 500)
         self.setWindowIcon(QIcon("pic.ico"))
+        self.initUI()
 
-        lable = QLabel("Hello", self)
-        lable.setFont(QFont("Arial", 30,))
-        lable.setGeometry(0, 0, 500, 100)
-        lable.setStyleSheet("color: #ff0062;"
-                            "background-color: #232b3b;"
-                            "font-weight: bold;"
-                            "font-style: italic;"
-                            "text-decoration: underline")
-        # lable.setAlignment(Qt.AlignTop)  # V Top
-        # lable.setAlignment(Qt.AlignBottom)  # V B
-       # lable.setAlignment(Qt.AlignVCenter)  # V Center
-        # lable.setAlignment(Qt.AlignHCenter)  # H Center
-        # lable.setAlignment(Qt.AlignRight)  #  H R
-        # lable.setAlignment(Qt.AlignHCenter) H C
-        # lable.setAlignment(Qt.AlignHLeft)  H C
-        # lable.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-        lable.setAlignment(Qt.AlignCenter)
+    def initUI(self):
 
-        lable2 = QLabel(self)
-        lable2.setGeometry(0, 0, 250, 250)
-        pixmap = QPixmap("pic.ico")
-        lable2.setPixmap(pixmap)
-        lable2.setScaledContents(True)
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
 
-        lable2.setGeometry((self.width() - lable2.width()) // 2,
-                           (self.height() - lable2.height()) // 2,
-                           lable2.width(),
-                           lable2.height())
+        lable1 = QLabel("Hello")
+        lable2 = QLabel("Hello")
+        lable3 = QLabel("Hello")
+        lable4 = QLabel("Hello")
+        lable5 = QLabel("Hello")
+
+        lable1.setStyleSheet("background-color: #232b3b;")
+        lable2.setStyleSheet("background-color: yellow;")
+        lable3.setStyleSheet("background-color: green;")
+        lable4.setStyleSheet("background-color: blue;")
+        lable5.setStyleSheet("background-color: red;")
+
+        # vbox = QVBoxLayout()
+
+        # vbox.addWidget(lable1)
+        # vbox.addWidget(lable2)
+        # vbox.addWidget(lable3)
+        # vbox.addWidget(lable4)
+        # vbox.addWidget(lable5)
+
+        gbox = QGridLayout()
+
+        gbox.addWidget(lable1, 0, 0)
+        gbox.addWidget(lable2, 0, 1)
+        gbox.addWidget(lable3, 1, 0)
+        gbox.addWidget(lable4, 1, 1)
+        gbox.addWidget(lable5, 1, 2)
+
+        central_widget.setLayout(gbox)
 
 
 def main():
