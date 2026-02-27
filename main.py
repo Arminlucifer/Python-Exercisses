@@ -1610,6 +1610,8 @@ class MainWindow(QMainWindow):
 
         # button/lable
         self.button = QPushButton("Click me")
+        self.button.clicked.connect(self.on_click)
+
         self.lable = QLabel("Hello")
 
         self.initUI()
@@ -1617,8 +1619,12 @@ class MainWindow(QMainWindow):
     def initUI(self):
 
         self.button.setStyleSheet(
-            "font-size: 30px; background-color: #2ecc71; color: white;")
-        self.button.clicked.connect(self.on_click)
+            "font-size: 30px; "
+            "background-color: #2ecc71; "
+            "color: white; "
+            "border-radius: 5px; "
+            "border: 2px solid #27ae60;"
+            "padding: 10px;")
 
         self.lable.setFont(QFont("Tahoma", 18))
         self.lable.setAlignment(Qt.AlignCenter)
