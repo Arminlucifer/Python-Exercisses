@@ -1589,6 +1589,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
 
@@ -1599,7 +1600,7 @@ class MainWindow(QMainWindow):
         self.setGeometry(700, 300, 500, 500)
         self.setWindowIcon(QIcon("pic.ico"))
 
-        lable = QLabel("Hello World!", self)
+        lable = QLabel("Hello", self)
         lable.setFont(QFont("Arial", 30,))
         lable.setGeometry(0, 0, 500, 100)
         lable.setStyleSheet("color: #ff0062;"
@@ -1614,8 +1615,19 @@ class MainWindow(QMainWindow):
         # lable.setAlignment(Qt.AlignRight)  #  H R
         # lable.setAlignment(Qt.AlignHCenter) H C
         # lable.setAlignment(Qt.AlignHLeft)  H C
-        #lable.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+        # lable.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         lable.setAlignment(Qt.AlignCenter)
+
+        lable2 = QLabel(self)
+        lable2.setGeometry(0, 0, 250, 250)
+        pixmap = QPixmap("pic.ico")
+        lable2.setPixmap(pixmap)
+        lable2.setScaledContents(True)
+
+        lable2.setGeometry((self.width() - lable2.width()) // 2,
+                           (self.height() - lable2.height()) // 2,
+                           lable2.width(),
+                           lable2.height())
 
 
 def main():
