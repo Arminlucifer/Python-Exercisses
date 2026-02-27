@@ -1554,31 +1554,56 @@
 # print("test2")
 
 # ======================================REQUESTING API==========================================================================
-import requests
+# import requests
+#
+# base_url = "https://pokeapi.co/api/v2/"
+#
+#
+# def get_pokemon_info(name):
+#    url = f"{base_url}/pokemon/{name}"
+#    response = requests.get(url)
+#
+#    if response.status_code == 200:
+#        pokemon_data = response.json()
+#        return pokemon_data
+#    else:
+#        print(f"Failed to retrieve data {response.status_code}")
+#
+#
+# pokemon_name = "pikachu"
+#
+# pokemon_info = get_pokemon_info(pokemon_name)
+#
+# if pokemon_info:
+#    print(f"Name: {pokemon_info["name"].capitalize()}")
+#    print(f"Height: {pokemon_info["height"]}")
+#    print(f"Weight: {pokemon_info["weight"]}")
+#    print(f"Id: {pokemon_info["id"]}")
+#    print("Abilities: ")
+#    for ability in pokemon_info["abilities"]:
+#        print(f" -{ability['ability']['name']}")
 
-base_url = "https://pokeapi.co/api/v2/"
+
+# ========================================PyQt5================================================
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtGui import QIcon
 
 
-def get_pokemon_info(name):
-    url = f"{base_url}/pokemon/{name}"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        pokemon_data = response.json()
-        return pokemon_data
-    else:
-        print(f"Failed to retrieve data {response.status_code}")
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My Cool First Window!")
+        self.setGeometry(700, 300, 500, 500)
+        self.setWindowIcon(QIcon("pic.ico"))
 
 
-pokemon_name = "pikachu"
+def main():
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())
 
-pokemon_info = get_pokemon_info(pokemon_name)
 
-if pokemon_info:
-    print(f"Name: {pokemon_info["name"].capitalize()}")
-    print(f"Height: {pokemon_info["height"]}")
-    print(f"Weight: {pokemon_info["weight"]}")
-    print(f"Id: {pokemon_info["id"]}")
-    print("Abilities: ")
-    for ability in pokemon_info["abilities"]:
-        print(f" -{ability['ability']['name']}")
+if __name__ == "__main__":
+    main()
