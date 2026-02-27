@@ -1513,3 +1513,42 @@
 # else:
 #    print("Target date has NOT passed")
 
+
+# ==============================Multi-Threading=====================================
+# multithreading = used to perform multipie tasks concurrently (multitasking)
+#               good for I/O bound tasks like reading files or fetching data from APIs
+#               threading.Thread(target=my_function)
+
+import time
+import threading
+
+
+def walking_dog(first):
+    time.sleep(8)
+    print(f"You've finished walking {first}")
+
+
+def clean_house():
+    time.sleep(5)
+    print("You've finished cleaning the house")
+
+
+def get_mail():
+    time.sleep(2)
+    print("You get the mail")
+
+
+task1 = threading.Thread(target=walking_dog, args=("Pani",))
+task2 = threading.Thread(target=clean_house)
+task3 = threading.Thread(target=get_mail)
+
+print("test")
+
+task1.start()
+task2.start()
+task3.start()
+task1.join()
+task2.join()
+task3.join()
+
+print("test2")
