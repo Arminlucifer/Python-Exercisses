@@ -1587,7 +1587,7 @@
 # ========================================PyQt5================================================
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
-                             QWidget, QVBoxLayout, QHBoxLayout, QGridLayout)
+                             QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QFont
 from PyQt5.QtGui import QPixmap
@@ -1600,24 +1600,39 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("My Cool First Window!")
         self.setGeometry(700, 300, 500, 500)
         self.setWindowIcon(QIcon("pic.ico"))
+
+        # central widget
+        self.central_widget = QWidget()
+        self.setCentralWidget(self.central_widget)
+
+        # Veritical layout
+        self.layout = QVBoxLayout(self.central_widget)
+
+        # button/lable
+        self.button = QPushButton("Click me")
+        self.lable = QLabel("Hello")
+
         self.initUI()
 
     def initUI(self):
 
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
+        self.button.setStyleSheet(
+            "font-size: 30px; background-color: #2ecc71; color: white;")
+        self.button.clicked.connect(self.on_click)
 
-        lable1 = QLabel("Hello")
-        lable2 = QLabel("Hello")
-        lable3 = QLabel("Hello")
-        lable4 = QLabel("Hello")
-        lable5 = QLabel("Hello")
+        self.lable.setFont(QFont("Tahoma", 18))
+        self.lable.setAlignment(Qt.AlignCenter)
+        self.lable.setStyleSheet(
+            "color: #e74c3c; font-weight: bold; margin-top: 20px;")
 
-        lable1.setStyleSheet("background-color: #232b3b;")
-        lable2.setStyleSheet("background-color: yellow;")
-        lable3.setStyleSheet("background-color: green;")
-        lable4.setStyleSheet("background-color: blue;")
-        lable5.setStyleSheet("background-color: red;")
+        self.layout.addWidget(self.button)
+        self.layout.addWidget(self.lable)
+
+        self.layout.setAlignment(Qt.AlignCenter)
+
+    def on_click(self):
+        print("button clicked")
+        self.lable.setText("Goodbye")
 
         # vbox = QVBoxLayout()
 
@@ -1627,15 +1642,15 @@ class MainWindow(QMainWindow):
         # vbox.addWidget(lable4)
         # vbox.addWidget(lable5)
 
-        gbox = QGridLayout()
+        # gbox = QGridLayout()
 
-        gbox.addWidget(lable1, 0, 0)
-        gbox.addWidget(lable2, 0, 1)
-        gbox.addWidget(lable3, 1, 0)
-        gbox.addWidget(lable4, 1, 1)
-        gbox.addWidget(lable5, 1, 2)
+        # gbox.addWidget(lable1, 0, 0)
+        # gbox.addWidget(lable2, 0, 1)
+        # gbox.addWidget(lable3, 1, 0)
+        # gbox.addWidget(lable4, 1, 1)
+        # gbox.addWidget(lable5, 1, 2)
 
-        central_widget.setLayout(gbox)
+        # central_widget.setLayout(gbox)
 
 
 def main():
