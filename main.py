@@ -1586,8 +1586,10 @@
 
 # ========================================PyQt5================================================
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 
 class MainWindow(QMainWindow):
@@ -1596,6 +1598,24 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("My Cool First Window!")
         self.setGeometry(700, 300, 500, 500)
         self.setWindowIcon(QIcon("pic.ico"))
+
+        lable = QLabel("Hello World!", self)
+        lable.setFont(QFont("Arial", 30,))
+        lable.setGeometry(0, 0, 500, 100)
+        lable.setStyleSheet("color: #ff0062;"
+                            "background-color: #232b3b;"
+                            "font-weight: bold;"
+                            "font-style: italic;"
+                            "text-decoration: underline")
+        # lable.setAlignment(Qt.AlignTop)  # V Top
+        # lable.setAlignment(Qt.AlignBottom)  # V B
+       # lable.setAlignment(Qt.AlignVCenter)  # V Center
+        # lable.setAlignment(Qt.AlignHCenter)  # H Center
+        # lable.setAlignment(Qt.AlignRight)  #  H R
+        # lable.setAlignment(Qt.AlignHCenter) H C
+        # lable.setAlignment(Qt.AlignHLeft)  H C
+        #lable.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+        lable.setAlignment(Qt.AlignCenter)
 
 
 def main():
